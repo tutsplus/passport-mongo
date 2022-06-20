@@ -85,4 +85,9 @@ h1.error-message{
 }
 ul.user-details{
     list-style: none;
+    text-align: left;
+}
+.user-details li{
+    padding: 10px;
+    font-weight: 500;
 }
