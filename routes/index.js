@@ -43,16 +43,12 @@ module.exports = function(passport){
 		res.render('home', { user: req.user });
 	});
 
-	/* Handle Logout */
-	router.get('/signout', function(req, res) {
-		req.logout();
-		res.redirect('/');
-	});
-
+    /* Handle Logout */
+    router.get('/signout',  function(req, res, next) {
+        req.logout(function(err) {
+        if (err) { return next(err); }
+        res.redirect('/')
+		})
+    });
 	return router;
 }
-
-
-
-
-
